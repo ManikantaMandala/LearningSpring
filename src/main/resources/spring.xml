@@ -4,14 +4,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle">
-        <property name="type" value="Equilateral"/>
-        <property name="height" value="20"/>
-<!--        <constructor-arg type="java.lang.String" value="Equilateral"/>-->
-<!--        <constructor-arg type="int" value="20"/>-->
-    </bean>
-    <bean id="tri" class="com.mandala.spring.SpringDemo.Triangle">
-        <constructor-arg type="java.lang.String" value="Isosceles"/>
-        <constructor-arg type="int" value="20"/>
+        <property name="pointA" ref="pointA"/>
+        <property name="pointB" ref="pointB"/>
+        <property name="pointC" ref="pointC"/>
     </bean>
 
+    <bean id="pointA" class="com.mandala.spring.SpringDemo.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="0"/>
+    </bean>
+
+    <bean id="pointB" class="com.mandala.spring.SpringDemo.Point">
+        <property name="x" value="20"/>
+        <property name="y" value="0"/>
+    </bean>
+
+    <bean id="pointC" class="com.mandala.spring.SpringDemo.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="20"/>
+    </bean>
 </beans>
