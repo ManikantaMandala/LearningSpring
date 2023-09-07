@@ -5,6 +5,13 @@
 
     <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle">
         <property name="type" value="Equilateral"/>
+        <property name="height" value="20"/>
+<!--        <constructor-arg type="java.lang.String" value="Equilateral"/>-->
+<!--        <constructor-arg type="int" value="20"/>-->
+    </bean>
+    <bean id="tri" class="com.mandala.spring.SpringDemo.Triangle">
+        <constructor-arg type="java.lang.String" value="Isosceles"/>
+        <constructor-arg type="int" value="20"/>
     </bean>
 
 </beans>
