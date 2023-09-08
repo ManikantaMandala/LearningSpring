@@ -4,23 +4,27 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle">
-        <property name="pointA" ref="pointA"/>
-        <property name="pointB" ref="pointB"/>
-        <property name="pointC" ref="pointC"/>
+        <property name="pointA">
+            <ref bean="origin"/>
+        </property>
+        <property name="pointB" >
+            <bean  id="pointB" class="com.mandala.spring.SpringDemo.Point">
+                <property name="x" value="20"/>
+                <property name="y" value="0"/>
+            </bean>
+        </property>
+        <property name="pointC">
+            <bean id="pointC" class="com.mandala.spring.SpringDemo.Point">
+                <property name="x" value="0"/>
+                <property name="y" value="20"/>
+            </bean>
+        </property>
     </bean>
 
-    <bean id="pointA" class="com.mandala.spring.SpringDemo.Point">
+    <bean id="origin" class="com.mandala.spring.SpringDemo.Point">
         <property name="x" value="0"/>
         <property name="y" value="0"/>
     </bean>
 
-    <bean id="pointB" class="com.mandala.spring.SpringDemo.Point">
-        <property name="x" value="20"/>
-        <property name="y" value="0"/>
-    </bean>
-
-    <bean id="pointC" class="com.mandala.spring.SpringDemo.Point">
-        <property name="x" value="0"/>
-        <property name="y" value="20"/>
-    </bean>
+    <alias name="triangle" alias="triangle-alias"/>
 </beans>
