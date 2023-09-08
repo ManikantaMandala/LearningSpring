@@ -10,9 +10,9 @@ public class DrawingApplication {
 
 //        Using spring container
 //        Using ApplicationContext
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-        Triangle triangle1 = (Triangle) applicationContext.getBean("triangle");
-        Triangle triangle2 = (Triangle)  applicationContext.getBean("triangle");
+        ApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("spring.xml");
+        Triangle triangle1 = (Triangle) applicationContext1.getBean("triangle");
+        Triangle triangle2 = (Triangle) applicationContext1.getBean("triangle");
 
 /*
         Both the objects reference point to same reference(same object)

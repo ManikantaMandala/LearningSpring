@@ -4,23 +4,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--triangle-->
-    <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName" scope="prototype">
-
+    <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName" >
     </bean>
 
     <!--points-->
-    <bean id="pointA" class="com.mandala.spring.SpringDemo.Point">
+    <bean id="pointA" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
         <property name="x" value="0"/>
         <property name="y" value="0"/>
     </bean>
-    <bean  id="pointB" class="com.mandala.spring.SpringDemo.Point">
+    <bean  id="pointB" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
         <property name="x" value="20"/>
         <property name="y" value="0"/>
     </bean>
-    <bean id="pointC" class="com.mandala.spring.SpringDemo.Point">
+    <bean id="pointC" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
         <property name="x" value="0"/>
         <property name="y" value="20"/>
     </bean>
 
-    <alias name="triangle" alias="triangle-alias"/>
 </beans>
