@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--triangle-->
-    <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName">
+    <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName" scope="prototype">
 
     </bean>
 
