@@ -4,18 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--triangle-->
-    <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle">
-        <property name="points">
-            <list>
-                <ref bean="origin"/>
-                <ref bean="pointB"/>
-                <ref bean="pointC"/>
-            </list>
-        </property>
+    <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName">
+
     </bean>
 
     <!--points-->
-    <bean id="origin" class="com.mandala.spring.SpringDemo.Point">
+    <bean id="pointA" class="com.mandala.spring.SpringDemo.Point">
         <property name="x" value="0"/>
         <property name="y" value="0"/>
     </bean>
