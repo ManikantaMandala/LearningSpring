@@ -4,7 +4,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--triangle-->
-    <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName" >
+    <bean id="parentTriangle" class="com.mandala.spring.SpringDemo.Triangle" abstract="true">
+        <property name="points">
+            <list>
+                <ref bean="pointA"/>
+            </list>
+        </property>
+        <property name="pointA" ref="pointA"/>
+    </bean>
+
+    <bean id="childTriangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName" parent="parentTriangle">
+        <property name="points">
+            <list merge="true">
+                <ref bean="pointB"/>
+            </list>
+        </property>
     </bean>
 
     <!--points-->

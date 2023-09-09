@@ -1,32 +1,34 @@
 package com.mandala.spring.SpringDemo;
 
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+
+import java.util.List;
 
 
-public class Triangle implements ApplicationContextAware {
+public class Triangle {
     private Point pointA, pointB, pointC;
-    ApplicationContext context = null;
+    private List<Point> points;
 
-    public void setPointA(Point pointA) {
-        this.pointA = pointA;
-//        System.out.println(this.context.getBean("pointA") + " hello ");
-        System.out.println(this.pointA + " A");
+    public List<Point> getPoints() {
+        return points;
+    }
+
+    public void setPoints(List<Point> points) {
+        this.points = points;
     }
 
     public Point getPointA() {
         return pointA;
     }
 
+    public void setPointA(Point pointA) {
+        this.pointA = pointA;
+    }
     public Point getPointB() {
         return pointB;
     }
 
     public void setPointB(Point pointB) {
-//        this.pointB = (Point) context.getBean("pointB");
         this.pointB = pointB;
-        System.out.println(this.pointB + " B");
     }
 
     public Point getPointC() {
@@ -34,23 +36,15 @@ public class Triangle implements ApplicationContextAware {
     }
 
     public void setPointC(Point pointC) {
-//        this.pointC = (Point) context.getBean("pointC");
         this.pointC = pointC;
-        System.out.println(this.pointC+" C");
     }
 
     public void draw(){
         System.out.println("Point A " + this.pointA + ": x = " + getPointA().getX() + " y = " + getPointA().getY());
         System.out.println("Point B " + this.pointB + ": x = " + getPointB().getX() + " y = " + getPointB().getY());
         System.out.println("Point C " + this.pointC + ": x = " + getPointC().getX() + " y = " + getPointC().getY());
+        System.out.println("Elements in the list");
+        points.forEach(System.out::println);
     }
 
-    @Override
-    public void setApplicationContext(ApplicationContext context) throws BeansException {
-        this.context = context;
-        System.out.println(this.context);
-        this.pointA = (Point) this.context.getBean("pointA");
-        this.pointB = (Point) this.context.getBean("pointB");
-        this.pointC = (Point) this.context.getBean("pointC");
-    }
 }

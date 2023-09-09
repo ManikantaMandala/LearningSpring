@@ -5,29 +5,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DrawingApplication {
     public static void main(String[] args) {
-//        Using new operator
-//        com.mandala.spring.SpringDemo.Triangle triangle = new com.mandala.spring.SpringDemo.Triangle();
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+//        because it is an abstract
+//        Triangle parentTriangle = (Triangle) context.getBean("parentTriangle");
+        Triangle childTriangle = (Triangle) context.getBean("childTriangle");
 
-//        Using spring container
-//        Using ApplicationContext
-        ApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("spring.xml");
-        Triangle triangle1 = (Triangle) applicationContext1.getBean("triangle");
-        Triangle triangle2 = (Triangle) applicationContext1.getBean("triangle");
-
-/*
-        Both the objects reference point to same reference(same object)
-        This is because of Singleton bean scope
-        Singleton bean scope: only once per spring container
-*/
-/*
-        Both the objects reference point to different reference(different objects)
-        This is because of Prototype bean scope
-        Prototype bean scope: new bean created with every request or reference
-*/
-
-        System.out.println(triangle1);
-        System.out.println(triangle2);
-        triangle1.draw();
-        triangle2.draw();
+//        System.out.println(parentTriangle);
+        System.out.println(childTriangle);
+        childTriangle.draw();
     }
 }
