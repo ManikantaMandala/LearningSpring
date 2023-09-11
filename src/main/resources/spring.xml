@@ -25,6 +25,6 @@
     <!--BeanFactoryPostProcessor-->
     <bean class="com.mandala.spring.SpringDemo.MyBeanFactoryPP"/>
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
-        <property name="location" value="point-config.properties"/>
+        <property name="location" value="classpath:point-config.properties"/>
     </bean>
 </beans>
