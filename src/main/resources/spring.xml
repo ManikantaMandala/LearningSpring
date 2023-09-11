@@ -4,14 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--triangle-->
-    <bean id="Triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName">
+    <bean id="Triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName"/>
 
-    </bean>
+    <!--circle-->
+    <bean id="Circle" class="com.mandala.spring.SpringDemo.Circle" autowire="byName"/>
 
     <!--points-->
-    <bean id="pointA" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
-        <property name="x" value="${pointA.pointX}"/>
-        <property name="y" value="${pointA.pointY}"/>
+    <bean id="origin" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
+        <property name="x" value="${origin.pointX}"/>
+        <property name="y" value="${origin.pointY}"/>
     </bean>
     <bean  id="pointB" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
         <property name="x" value="20"/>

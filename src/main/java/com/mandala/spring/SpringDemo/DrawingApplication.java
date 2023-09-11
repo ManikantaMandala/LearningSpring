@@ -6,8 +6,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class DrawingApplication {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        Triangle childTriangle = (Triangle) context.getBean("Triangle");
+        Shape shape = (Shape) context.getBean("Circle");
 
-        childTriangle.draw();
+
+        shape.draw();
     }
 }
