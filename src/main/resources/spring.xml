@@ -10,8 +10,8 @@
 
     <!--points-->
     <bean id="pointA" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
-        <property name="x" value="0"/>
-        <property name="y" value="0"/>
+        <property name="x" value="${pointA.pointX}"/>
+        <property name="y" value="${pointA.pointY}"/>
     </bean>
     <bean  id="pointB" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
         <property name="x" value="20"/>
@@ -22,7 +22,9 @@
         <property name="y" value="20"/>
     </bean>
 
-    <!--BeanPostProcessor-->
-    <bean class="com.mandala.spring.SpringDemo.implementingBeanPostProcessor"/>
-
+    <!--BeanFactoryPostProcessor-->
+    <bean class="com.mandala.spring.SpringDemo.MyBeanFactoryPP"/>
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="location" value="point-config.properties"/>
+    </bean>
 </beans>
