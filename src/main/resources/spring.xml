@@ -7,25 +7,33 @@
     <bean id="Triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName"/>
 
     <!--circle-->
-    <bean id="Circle" class="com.mandala.spring.SpringDemo.Circle" autowire="byName"/>
+    <bean id="Circle" class="com.mandala.spring.SpringDemo.Circle">
+    </bean>
 
     <!--points-->
-    <bean id="origin" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
+    <bean id="pointA" class="com.mandala.spring.SpringDemo.Point" >
+        <qualifier value="originPoint"/>
         <property name="x" value="${origin.pointX}"/>
         <property name="y" value="${origin.pointY}"/>
     </bean>
-    <bean  id="pointB" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
+
+    <bean  id="pointB" class="com.mandala.spring.SpringDemo.Point" >
         <property name="x" value="20"/>
         <property name="y" value="0"/>
     </bean>
-    <bean id="pointC" class="com.mandala.spring.SpringDemo.Point" scope="prototype">
+
+    <bean id="pointC" class="com.mandala.spring.SpringDemo.Point" >
         <property name="x" value="0"/>
         <property name="y" value="20"/>
     </bean>
 
     <!--BeanFactoryPostProcessor-->
+    <!--<bean class="com.mandala.spring.SpringDemo.implementingBeanPostProcessor"/>-->
     <bean class="com.mandala.spring.SpringDemo.MyBeanFactoryPP"/>
+
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
         <property name="location" value="classpath:point-config.properties"/>
     </bean>
+
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 </beans>
