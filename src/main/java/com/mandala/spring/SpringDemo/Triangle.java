@@ -9,8 +9,6 @@ public class Triangle implements Shape{
         return this.pointA;
     }
 
-    @Autowired
-    @Qualifier("originPoint")
     public void setPointA(Point pointA) {
         this.pointA = pointA;
     }

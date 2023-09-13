@@ -1,5 +1,8 @@
 package com.mandala.spring.SpringDemo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Point {
     private int x;
     private int y;

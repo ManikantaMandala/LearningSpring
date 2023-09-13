@@ -4,9 +4,11 @@ import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-
 @Component
 public class Circle implements Shape{
+
+    @Autowired
+    @Qualifier("pointA")
     private Point origin;
 
     @Override
@@ -18,10 +20,8 @@ public class Circle implements Shape{
         return origin;
     }
 
-//    @Resource
 
-    @Autowired // TODO: Understand why it's not working
-    @Qualifier("originPoint")
+
     public void setOrigin(Point origin) {
         this.origin = origin;
     }

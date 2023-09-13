@@ -6,8 +6,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class DrawingApplication {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        Shape shape = (Shape) context.getBean("Circle");
-
+        String[] beans = context.getBeanDefinitionNames();
+        for(String bean: beans){
+            System.out.println(bean);
+        }
+        Shape shape = (Shape) context.getBean("circle");
         shape.draw();
     }
 }

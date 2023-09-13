@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="com.mandala.spring.SpringDemo" />
+
 
     <!--triangle-->
-    <bean id="Triangle" class="com.mandala.spring.SpringDemo.Triangle" autowire="byName"/>
+    <bean id="triangle" class="com.mandala.spring.SpringDemo.Triangle">
+        <property name="pointB" ref="pointB"/>
+        <property name="pointA" ref="pointA"/>
+        <property name="pointC" ref="pointC"/>
+    </bean>
 
     <!--circle-->
-    <bean id="Circle" class="com.mandala.spring.SpringDemo.Circle">
+    <bean id="circle" class="com.mandala.spring.SpringDemo.Circle">
     </bean>
 
     <!--points-->
     <bean id="pointA" class="com.mandala.spring.SpringDemo.Point" >
-        <qualifier value="originPoint"/>
+        <qualifier value="pointA" />
         <property name="x" value="${origin.pointX}"/>
         <property name="y" value="${origin.pointY}"/>
     </bean>
@@ -26,9 +35,6 @@
         <property name="x" value="0"/>
         <property name="y" value="20"/>
     </bean>
-
-    <!--BeanFactoryPostProcessor-->
-    <!--<bean class="com.mandala.spring.SpringDemo.implementingBeanPostProcessor"/>-->
     <bean class="com.mandala.spring.SpringDemo.MyBeanFactoryPP"/>
 
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
