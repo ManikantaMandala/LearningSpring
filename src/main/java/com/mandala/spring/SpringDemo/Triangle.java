@@ -2,6 +2,7 @@ package com.mandala.spring.SpringDemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 public class Triangle implements Shape{
     private Point pointA, pointB, pointC;
@@ -9,6 +10,8 @@ public class Triangle implements Shape{
         return this.pointA;
     }
 
+    @Autowired
+    @Qualifier("origin")
     public void setPointA(Point pointA) {
         this.pointA = pointA;
     }
