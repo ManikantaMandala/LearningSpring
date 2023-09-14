@@ -16,8 +16,7 @@
     </bean>
 
     <!--circle-->
-    <bean id="circle" class="com.mandala.spring.SpringDemo.Circle">
-    </bean>
+    <bean id="circle" class="com.mandala.spring.SpringDemo.Circle"/>
 
     <!--points-->
     <bean id="pointA" class="com.mandala.spring.SpringDemo.Point" >
@@ -35,6 +34,9 @@
         <property name="x" value="0"/>
         <property name="y" value="20"/>
     </bean>
+
+    <!--BeanFactoryPostProcessor-->
+<!--    <bean class="com.mandala.spring.SpringDemo.implementingBeanPostProcessor"/>-->
     <bean class="com.mandala.spring.SpringDemo.MyBeanFactoryPP"/>
 
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">

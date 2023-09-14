@@ -20,8 +20,7 @@ public class Circle implements Shape{
         return origin;
     }
 
-
-
+//    @Resource(name = "pointA")
     public void setOrigin(Point origin) {
         this.origin = origin;
     }

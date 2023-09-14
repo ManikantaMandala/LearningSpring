@@ -7,10 +7,13 @@ public class DrawingApplication {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         String[] beans = context.getBeanDefinitionNames();
+        System.out.println("Beans...");
         for(String bean: beans){
             System.out.println(bean);
         }
         Shape shape = (Shape) context.getBean("circle");
+
+
         shape.draw();
     }
 }
