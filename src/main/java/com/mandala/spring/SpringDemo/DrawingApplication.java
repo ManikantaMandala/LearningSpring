@@ -1,6 +1,5 @@
 package com.mandala.spring.SpringDemo;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
