@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class Circle implements Shape{
 
-//    @Autowired
-//    @Qualifier("origin")
+    @Autowired
+    @Qualifier("origin")
     private Point origin;
 
     @Override

@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:annotation-config />
-<!--    <context:component-scan base-package="com.mandala.spring.SpringDemo" />-->
+    <context:component-scan base-package="com.mandala.spring.SpringDemo" />
 
 
     <!--triangle-->
@@ -18,7 +18,7 @@
 
     <!--circle-->
     <!--@Component is in Circle.java-->
-     <bean id="circle" class="com.mandala.spring.SpringDemo.Circle"/>
+<!--     <bean id="circle" class="com.mandala.spring.SpringDemo.Circle"/>-->
 
     <!--points-->
     <bean id="pointA" class="com.mandala.spring.SpringDemo.Point" >
