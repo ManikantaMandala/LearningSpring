@@ -9,17 +9,20 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class LoggingAspect {
-    @Before("pointCut()")
+    @Before("pointCut() && allCircleMethodsWay2()")
     public void loggingAdviceBefore(){
         System.out.println("Before Advice, Before method ran");
     }
 
-    @After("pointCut()")
-    public void loggingAdviceAfter() { System.out.println("After Advice, After method ran");}
-
     @Pointcut("execution(public * get*())")
-    public void pointCut(){
+    public void pointCut(){ }
 
-    }
+    // way - 1 -> (using execution) - for point cutting for only the methods in Circle class
+    @Pointcut("execution(* com.mandala.spring.SpringDemo.model.Circle.*(..))")
+    public void allCircleMethodsWay1(){}
+
+    // way - 2 -> using within()
+    @Pointcut("within(com.mandala.spring.SpringDemo.model.Circle)")
+    public void allCircleMethodsWay2(){}
 
 }
