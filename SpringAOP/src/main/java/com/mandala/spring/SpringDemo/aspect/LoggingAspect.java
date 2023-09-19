@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class LoggingAspect {
-    @Before("allGetters() && allCircleMethods()")
+//    @Before("allGetters() && allCircleMethods()")
     public void loggingAdviceBefore(JoinPoint joinPoint){
         /*
         System.out.println(joinPoint);
@@ -21,24 +21,24 @@ public class LoggingAspect {
         System.out.println("Before Advice, Before method ran");
     }
 
-    @Pointcut("execution(public * get*())")
+//    @Pointcut("execution(public * get*())")
     public void allGetters(){ }
 
 //    @Before("args(String)")
-    @AfterReturning(pointcut = "args(name)", returning = "strReturn")
+//    @AfterReturning(pointcut = "args(name)", returning = "strReturn")
 //    public void StringArgMethods(){
     public void StringArgMethods(String name, String strReturn){
         System.out.println("String arguments method is called! and the name is: " + name);
         System.out.println(strReturn);
     }
 
-    @AfterThrowing(pointcut = "args(name)", throwing = "throwingException")
+//    @AfterThrowing(pointcut = "args(name)", throwing = "throwingException")
     public void exceptionAdvice(String name, RuntimeException throwingException){
         System.out.println("An exception has been thrown " + name);
         System.out.println(throwingException);
     }
 
-    @Around("allGetters()")
+    @Around("@annotation(com.mandala.spring.SpringDemo.aspect.Loggable)")
     public Object aroundAdvice(ProceedingJoinPoint proceedingJoinPoint){
         Object returnObject = null;
         try {
@@ -53,7 +53,7 @@ public class LoggingAspect {
         return returnObject;
     }
 
-    @Pointcut("within(com.mandala.spring.SpringDemo.model.Circle)")
+//    @Pointcut("within(com.mandala.spring.SpringDemo.model.Circle)")
     public void allCircleMethods(){}
 
 }
