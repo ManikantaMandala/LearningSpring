@@ -14,8 +14,12 @@ public class Main {
          */
 
         ShapeService shapeService = context.getBean("shapeService", ShapeService.class);
-        shapeService.getCircle().setName("Manikanta's circle");
 
-        System.out.println("Circle's name: "+ shapeService.getCircle().getName() /*+ ",\nTriangle's name: " + shapeService.getTriangle() + " :" + shapeService.getTriangle().getName()*/);
+//        try { shapeService.getCircle().setName("Manikanta's circle"); }
+//        catch (Exception e){ e.printStackTrace(); }
+
+//        shapeService.getCircle().setNameAndReturn("Mandala's circle");
+
+        System.out.println("Circle is : "+ shapeService.getCircle() /*+ ",\nTriangle's name: " + shapeService.getTriangle() + " :" + shapeService.getTriangle().getName()*/);
     }
 }

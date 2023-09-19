@@ -13,6 +13,7 @@ public class ShapeService {
     private Triangle triangle;
 
     public Circle getCircle() {
+        System.out.println("getting the circle object");
         return circle;
     }
 

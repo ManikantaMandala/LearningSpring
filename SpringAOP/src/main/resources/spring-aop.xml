@@ -14,6 +14,7 @@
     <bean class="com.mandala.spring.SpringDemo.model.Circle">
         <property name="name" value="Round circle"/>
     </bean>
+
     <bean class="com.mandala.spring.SpringDemo.model.Triangle">
         <property name="name" value="Right angled triangle"/>
     </bean>

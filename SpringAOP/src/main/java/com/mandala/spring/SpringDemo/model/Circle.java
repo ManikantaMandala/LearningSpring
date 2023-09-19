@@ -10,4 +10,7 @@ public class Circle {
     public void setName(String name) {
         this.name = name;
     }
+    public String setNameAndReturn(String name) {
+        return this.name = name;
+    }
 }
